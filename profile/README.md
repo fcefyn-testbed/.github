@@ -1,61 +1,33 @@
 # FCEFYN Testbed
 
-**Hardware-in-the-loop testing infrastructure for OpenWrt and LibreMesh**
+HIL lab for OpenWrt and LibreMesh at [FCEFyN](https://fcefyn.unc.edu.ar/) - [UNC](https://www.unc.edu.ar/), Córdoba, Argentina.
 
-Built at [Facultad de Ciencias Exactas, Físicas y Naturales](https://fcefyn.unc.edu.ar/) - [Universidad Nacional de Córdoba](https://www.unc.edu.ar/) - Argentina.
+Real routers on a rack, orchestrated with [Labgrid](https://labgrid.readthedocs.io/), tests with [pytest](https://docs.pytest.org/). Single-node runs on hardware or QEMU, multi-node mesh, ZeroTier for remote dev when you need it.
 
----
+## Repos
 
-## What is this?
+| Repo | What |
+|------|------|
+| [fcefyn_testbed_utils](https://github.com/fcefyn-testbed/fcefyn_testbed_utils) | Ansible, scripts, switch/relay control, docs site |
+| [libremesh-tests](https://github.com/fcefyn-testbed/libremesh-tests) | pytest suite + Labgrid targets (fork of [openwrt-tests](https://github.com/aparcar/openwrt-tests), mesh support) |
+| [lime-packages](https://github.com/fcefyn-testbed/lime-packages) | LibreMesh fork, firmware build + CI |
 
-A physical testbed for automated firmware validation on real router hardware. The lab runs continuous integration tests on OpenWrt and LibreMesh firmware using [Labgrid](https://labgrid.readthedocs.io/) for device orchestration and [pytest](https://docs.pytest.org/) for test execution.
+## Links
 
-The infrastructure supports:
-
-- **Single-node tests** — one device at a time (physical or QEMU)
-- **Multi-node mesh tests** — multiple routers forming a mesh network
-- **Remote access** — devices reachable via ZeroTier for development and debugging
-
----
-
-## Repositories
-
-| Repository | Description |
-|------------|-------------|
-| [**fcefyn_testbed_utils**](https://github.com/fcefyn-testbed/fcefyn_testbed_utils) | Lab infrastructure: Ansible roles, scripts, switch/relay control, documentation |
-| [**libremesh-tests**](https://github.com/fcefyn-testbed/libremesh-tests) | Fork of [openwrt-tests](https://github.com/aparcar/openwrt-tests) with LibreMesh multi-node support |
-
----
-
-## Resources
-
-| Resource | Link |
-|----------|------|
-| Documentation | [fcefyn-testbed.github.io/fcefyn_testbed_utils](https://fcefyn-testbed.github.io/fcefyn_testbed_utils/) |
-| Live Metrics (Grafana) | [fcefyn-testbed.github.io/fcefyn_testbed_utils/configuracion/grafana-publico](https://fcefyn-testbed.github.io/fcefyn_testbed_utils/configuracion/grafana-publico/) |
-
----
+| | |
+|---|---|
+| Docs | [fcefyn-testbed.github.io/fcefyn_testbed_utils](https://fcefyn-testbed.github.io/fcefyn_testbed_utils/) |
+| CI dashboard | [ci-results/dashboard](https://fcefyn-testbed.github.io/fcefyn_testbed_utils/ci-results/dashboard.html) |
+| Grafana | [fcefyn-testbed.duckdns.org](https://fcefyn-testbed.duckdns.org/) (invite only; [how it works](https://fcefyn-testbed.github.io/fcefyn_testbed_utils/configuracion/grafana-public-access/)) |
 
 ## Hardware
 
-The testbed includes devices donated by the community:
+OpenWrt One and BPi-R4 ([Banana Pi](https://banana-pi.org/)), LibreRouter ([AlterMundi](https://altermundi.net/)), Belkin RT3200 + host laptop ([INTI](https://www.argentina.gob.ar/inti)). Details: [hardware catalog](https://fcefyn-testbed.github.io/fcefyn_testbed_utils/configuracion/catalogo-hardware/).
 
-- **OpenWrt One** and **Banana Pi R4** — [Banana Pi](https://banana-pi.org/)
-- **LibreRouter** units — [AlterMundi](https://altermundi.net/)
-- **Belkin RT3200** routers and host laptop — [INTI](https://www.argentina.gob.ar/inti)
+## Upstream
 
-See the [hardware catalog](https://fcefyn-testbed.github.io/fcefyn_testbed_utils/configuracion/catalogo-hardware/) for full details.
-
----
-
-## Related Projects
-
-- [openwrt-tests](https://github.com/aparcar/openwrt-tests) — upstream single-node testing framework
-- [LibreMesh](https://libremesh.org/) — community mesh firmware
-- [OpenWrt](https://openwrt.org/) — base firmware
-
----
+[openwrt-tests](https://github.com/aparcar/openwrt-tests), [LibreMesh](https://libremesh.org/), [OpenWrt](https://openwrt.org/).
 
 ## Contact
 
-For questions about the testbed or collaboration inquiries, open an issue in [fcefyn_testbed_utils](https://github.com/fcefyn-testbed/fcefyn_testbed_utils/issues).
+Open an issue in [fcefyn_testbed_utils](https://github.com/fcefyn-testbed/fcefyn_testbed_utils/issues).
